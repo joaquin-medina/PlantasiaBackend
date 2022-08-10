@@ -24,7 +24,7 @@ app.use((err, _, res, next) => {
   if (err.name === 'UnauthorizedError') {
     res.status(httpStatus.UNAUTHORIZED).json({
       error: err.name,
-      cause: 'Tenes que ingresar con tu usuario primero'
+      cause: 'Tenes que loguearte primero'
     })
   } else {
     next(err)

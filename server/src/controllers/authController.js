@@ -80,8 +80,12 @@ const authController = (Users) => {
         }, {
           $set: {
             userName: body.userName,
+            name: body.name,
+            country: body.country,
             password: encryptedPassword,
-            email: body.email
+            email: body.email,
+            phone: body.phone,
+            plants: body.plants
           }
         })
       return res.status(httpStatus.CREATED).send('data successfully updated')

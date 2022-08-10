@@ -46,9 +46,11 @@ const plantsControllers = (Plants) => {
         }, {
           $set: {
             name: body.name,
+            scientName: body.scientName,
+            soilType: body.soilType,
             species: body.species,
-            owner: body.owner,
-            age: body.age
+            habitat: body.habitat,
+            edible: body.edible
           }
         })
       return res.status(httpStatus.CREATED).send('data successfully updated')

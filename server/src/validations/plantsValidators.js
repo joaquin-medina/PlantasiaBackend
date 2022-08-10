@@ -2,14 +2,16 @@ const joi = require('joi')
 
 const bodySchema = joi.object({
   name: joi.string().required(),
+  scientName: joi.string().alphanum().required(),
+  soilType: joi.string().alphanum().required(),
   species: joi.string().alphanum().required(),
-  owner: joi.string().alphanum().required(),
-  age: joi.number().required()
+  habitat: joi.string().alphanum().required(),
+  edible: joi.boolean().required()
 })
 
 const querySchema = joi.object().keys({
   name: joi.string(),
-  owner: joi.string()
+  scientName: joi.string()
 }
 )
 
