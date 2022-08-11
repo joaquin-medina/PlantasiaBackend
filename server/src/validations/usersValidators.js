@@ -1,17 +1,14 @@
 const joi = require('joi')
 
 const bodySchema = joi.object({
-  userName: joi.string().alphanum().trim().min(6).max(16).required(),
-  name: joi.string().alphanum().required(),
-  country: joi.string().alphanum().required(),
-  password: joi.string().alphanum().trim().required(),
+  name: joi.string().trim().min(3).max(16).required(),
+  lastName: joi.string().required(),
   email: joi.string().email().required(),
-  phone: joi.number().required(),
-  plants: joi.number()
+  password: joi.string().alphanum().trim().required()
 })
 
 const querySchema = joi.object().keys({
-  userName: joi.string().min(6).max(16),
+  name: joi.string().min(3).max(16),
   email: joi.string().email()
 }
 )
