@@ -19,7 +19,7 @@ const authController = (Users) => {
       const token = generateToken()
 
       return res.status(httpStatus.OK).json({
-        status: 'OK',
+        status: 'logged in',
         token
       })
     } catch (err) {
@@ -41,7 +41,9 @@ const authController = (Users) => {
       const users = await new Users(encryptedData)
       await users.save()
 
-      return res.status(httpStatus.CREATED).json(users)
+      return res.status(httpStatus.CREATED).json({
+        status: 'OK'
+      })
     } catch (err) {
       console.log(err)
       next(err)

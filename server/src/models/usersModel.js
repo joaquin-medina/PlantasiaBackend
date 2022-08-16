@@ -4,8 +4,8 @@ const { Schema } = mongoose
 
 const usersModel = new Schema(
   {
-    name: { type: String, required: true, minLength: 3, maxLength: 16 },
-    lastName: { type: String, required: true },
+    username: { type: String, required: true, minLength: 3, maxLength: 16 },
+    nameAndSurname: { type: String, required: true },
     email: { type: String, required: true, unique: true },
     password: { type: String, required: true }
   }

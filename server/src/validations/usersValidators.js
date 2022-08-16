@@ -1,15 +1,15 @@
 const joi = require('joi')
 
 const bodySchema = joi.object({
-  name: joi.string().trim().min(3).max(16).required(),
-  lastName: joi.string().required(),
+  username: joi.string().trim().min(3).max(16).required(),
+  nameAndSurname: joi.string().required(),
   email: joi.string().email().required(),
   password: joi.string().alphanum().trim().required()
 })
 
 const querySchema = joi.object().keys({
-  name: joi.string().min(3).max(16),
-  email: joi.string().email()
+  email: joi.string().min(3).max(16),
+  password: joi.string().alphanum().trim().required()
 }
 )
 
