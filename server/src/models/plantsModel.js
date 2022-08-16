@@ -4,12 +4,11 @@ const { Schema } = mongoose
 
 const plantsModel = new Schema(
   {
-    name: { type: String, required: true },
-    scientName: { type: String, required: true },
-    soilType: { type: String, required: true },
-    species: { type: String, required: true },
-    habitat: { type: String, required: true },
-    edible: { type: String }
+    userName: { type: String, required: true },
+    namePlant: { type: String, required: true },
+    description: { type: String, required: true },
+    tips: { type: String, required: true },
+    imgUrl: { type: String, required: true }
   }
 )
 
