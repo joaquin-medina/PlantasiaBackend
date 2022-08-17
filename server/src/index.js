@@ -7,6 +7,7 @@ const errorHandler = require('./middleware/errorHandler')
 const httpStatus = require('./helpers/httpStatus')
 require('dotEnv').config()
 const { expressjwt } = require('express-jwt')
+const cors = require('cors')
 const PORT = process.env.PORT || 5000
 
 const app = express()
@@ -15,6 +16,8 @@ require('./database/db.js')
 
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
+
+app.use(cors())
 
 app.all('/*', expressjwt({ secret: process.env.SECRET, algorithms: ['HS256'] })
   .unless({ path: ['/auth/login', '/auth/register'] })

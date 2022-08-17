@@ -20,7 +20,7 @@ const plantsControllers = (Plants) => {
       const plants = await new Plants(body)
       await plants.save()
 
-      return res.status(httpStatus.CREATED).json(plants)
+      return res.status(httpStatus.CREATED).send({ status: 'OK' })
     } catch (err) {
       console.log(err)
       next(err)

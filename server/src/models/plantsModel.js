@@ -4,7 +4,6 @@ const { Schema } = mongoose
 
 const plantsModel = new Schema(
   {
-    userName: { type: String, required: true },
     namePlant: { type: String, required: true },
     description: { type: String, required: true },
     tips: { type: String, required: true },
