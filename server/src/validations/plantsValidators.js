@@ -2,9 +2,9 @@ const joi = require('joi')
 
 const bodySchema = joi.object({
   namePlant: joi.string().required(),
-  description: joi.string().alphanum().required(),
-  tips: joi.string().alphanum().required(),
-  imgUrl: joi.string().alphanum().required()
+  description: joi.string().required(),
+  tips: joi.string().required(),
+  imgUrl: joi.string().required()
 })
 
 const querySchema = joi.object().keys({
